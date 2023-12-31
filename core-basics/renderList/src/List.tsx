@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 interface Edible {
  id: number;
  name: string;
@@ -23,6 +25,21 @@ function List(props: ItemProps){
      <ol className="list-items">{listItems}</ol>
    </>
  )
+}
+
+List.propTypes = {
+    category: PropTypes.string.isRequired,
+    items: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string,
+        calories: PropTypes.number.isRequired
+    }))
+
+}
+
+List.defaultProps = {
+    category: "Category",
+    items: [] as Array<Edible>,
 }
 
 export default List;
