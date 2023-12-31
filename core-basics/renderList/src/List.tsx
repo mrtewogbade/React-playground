@@ -1,20 +1,28 @@
-interface Fruit {
-   name: string,
-   calories: number
+interface Edible {
+ id: number;
+ name: string;
+ calories: number;
 }
 
-function List(){
-   const fruits: Fruit[] = [       
-       {name: "apple", calories: 95}, 
-       {name: "orange", calories: 45}, 
-       {name: "banana", calories: 105}, 
-       {name: "coconut", calories: 105}, 
-       {name: "pineapple", calories: 37}
-   ];
+interface ItemProps {
+ category: string;
+ items: Array<Edible>;
+}
 
-   const listItems = fruits.map((fruit )=> <li>{fruit.name}</li>)
 
-   return(<ol>{listItems}</ol>)
+
+function List(props: ItemProps){
+ const category = props.category;
+ const itemList = props.items.sort((a, b) => a.calories - b.calories);
+
+ const listItems = itemList.map((item )=> <li key={item.id}>{item.name}: calories <b>{item.calories}</b> </li>)
+
+ return(
+   <>
+     <h3 className="list-category">{category}</h3>
+     <ol className="list-items">{listItems}</ol>
+   </>
+ )
 }
 
 export default List;
