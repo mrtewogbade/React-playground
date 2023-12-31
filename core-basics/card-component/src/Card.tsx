@@ -11,7 +11,7 @@ function Card(){
             
             />
             <h2 className="cardTitle">Deborah Oladele</h2>
-            <p>I am a programmer</p>
+            <p className="cardText">I am a baker</p>
 
         </div>
     )
