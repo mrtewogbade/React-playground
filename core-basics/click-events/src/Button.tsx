@@ -1,7 +1,10 @@
 
 
 function Button (){
-    return (<button>Click me sma</button>)
+    const handleClick = () => console.log(("OUCHH!"));
+    
+
+    return (<button onClick={handleClick}>Click me</button>)
 }
 
 
