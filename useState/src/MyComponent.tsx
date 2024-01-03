@@ -1,11 +1,45 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 
 function MyComponent(){
-    const [name, setName] = useState;
+    const [name, setName] = useState('Guest');
+    const [age, setAge] = useState(0);
+
+    const updateName = () => {
+
+        setName("Spongebob");
+
+        
+    }
+
+    const decrementAge = () => {
+        setAge(()=>{
+            return age - 1;
+        })
+    }
+
+    const reset  = () => {
+        setAge(()=>{
+            return age - 1;
+        })
+    }
+
+
+    const incrementAge = () => {
+
+        setAge(() => {
+            return age + 4;
+        });
+    }
 
     return(
         <div>
-            <p></p>
+            <p>Name: {name}</p>
+            <button onClick={updateName }> Set Name</button>
+
+            <p>Age: {age}</p>
+            <button onClick={incrementAge}> Increment Age</button>
+
+            <button onClick={decrementAge}> Decrement Age</button>
         </div>
     )
 
