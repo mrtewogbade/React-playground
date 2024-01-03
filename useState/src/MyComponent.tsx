@@ -18,9 +18,7 @@ function MyComponent(){
     }
 
     const reset  = () => {
-        setAge(()=>{
-            return age - 1;
-        })
+        setAge(0)
     }
 
 
@@ -40,6 +38,8 @@ function MyComponent(){
             <button onClick={incrementAge}> Increment Age</button>
 
             <button onClick={decrementAge}> Decrement Age</button>
+
+            <button onClick={reset}> Reset Age</button>
         </div>
     )
 
