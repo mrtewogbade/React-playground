@@ -50,6 +50,22 @@ function MyComponent(){
             <option value="Giftcard">Giftcard</option>
          </select>
          <p>Payment: {payment}</p>
+
+
+        <label htmlFor="">
+            <input type="radio" value="Pick Up" 
+                checked={shipping === "Pick Up"}
+                onChange={handleShippingChange}/>
+            Pick Up
+        </label>
+
+        <label htmlFor="">
+            <input type="radio" value="Delivery" 
+                checked={shipping === "Delivery"}
+                onChange={handleShippingChange}/>
+            Delivery
+        </label>
+        <p>Shipping: {shipping}</p>
     </div>)
 
 
