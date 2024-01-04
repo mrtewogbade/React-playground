@@ -3,32 +3,56 @@ import { useState } from 'react';
 function MyComponent(){
 
     const [name, setName] = useState("Guest");
-    const [quantity, setQuantity] = useState();
+    const [quantity, setQuantity] = useState(0);
     const [comment, setComment] = useState("");
     const [payment, setPayment]= useState("");
     const [shipping, setShipping] = useState("");
 
-    function handleNameChange(event){
-        setName(event.target.value);
+    // function handleNameChange(event){
+    //     setName(event.target.value);
 
-    }
+    // }
 
-    function handleQuantityChange(event){
-        setQuantity(event.target.value)
-    }
+    // function handleQuantityChange(event){
+    //     setQuantity(event.target.value)
+    // }
 
-    function handleCommentChange(event){
-        setComment(event.target.value)
+    // function handleCommentChange(event){
+    //     setComment(event.target.value)
 
-    }
+    // }
 
-    function handlePaymentChange(event){
-        setPayment(event.target.value);
-    }
+    // function handlePaymentChange(event){
+    //     setPayment(event.target.value);
+    // }
 
-    function handleShippingChange(event){
-        setShipping(event.target.value)
-    }
+    // function handleShippingChange(event){
+    //     setShipping(event.target.value)
+    // }
+
+    function handleNameChange(event: React.ChangeEvent<HTMLInputElement>){
+   setName(event.target.value);
+}
+
+function handleQuantityChange(event: React.ChangeEvent<HTMLInputElement>){
+  setQuantity(Number(event.target.value))
+}
+
+
+function handleCommentChange(event: React.ChangeEvent<HTMLTextAreaElement>){
+   setComment(event.target.value)
+}
+
+function handlePaymentChange(event: React.ChangeEvent<HTMLSelectElement>){
+   setPayment(event.target.value);
+}
+
+function handleShippingChange(event: React.ChangeEvent<HTMLInputElement>){
+   setShipping(event.target.value)
+}
+
+
+
 
     return (<div>
         <input value={name} onChange={handleNameChange} type="text" />
