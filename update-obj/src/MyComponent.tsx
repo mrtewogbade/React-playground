@@ -24,7 +24,9 @@ function MyComponent(){
     return(<div>
         <p> Your favorite car is: {car.year} {car.make} {car.model} </p>
 
-        <input type="text" />
+        <input type="number" value={car.year} onChange={handleYearChange} />
+        <input type="text" value={car.year} onChange={handleMakeChange} />
+        <input type="number" value={car.year} onChange={handleModelChange} />
     </div>)                                
 
 }
